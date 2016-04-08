@@ -43,7 +43,7 @@ def serialize(result)
   {
     total:          result.total,
     rolls:          result.rolls,
-    nubmer_of_dice:  result.number_of_dice,
+    number_of_dice:  result.number_of_dice,
     die_sides:      result.die_sides
   }.to_json
 end
