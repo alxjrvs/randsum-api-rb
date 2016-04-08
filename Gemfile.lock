@@ -1,0 +1,43 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    codeclimate-test-reporter (0.4.8)
+      simplecov (>= 0.7.1, < 1.0.0)
+    coderay (1.1.1)
+    docile (1.1.5)
+    json (1.8.3)
+    method_source (0.8.2)
+    pry (0.10.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-remote (0.1.8)
+      pry (~> 0.9)
+      slop (~> 3.0)
+    rack (1.6.4)
+    rack-protection (1.5.3)
+      rack
+    rollr (1.0.1)
+    simplecov (0.11.1)
+      docile (~> 1.1.0)
+      json (~> 1.8)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.0)
+    sinatra (1.4.7)
+      rack (~> 1.5)
+      rack-protection (~> 1.4)
+      tilt (>= 1.3, < 3)
+    slop (3.6.0)
+    tilt (2.0.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  codeclimate-test-reporter
+  pry-remote
+  rollr
+  sinatra
+
+BUNDLED WITH
+   1.11.2
