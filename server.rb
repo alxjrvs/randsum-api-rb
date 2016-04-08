@@ -1,8 +1,6 @@
 require 'sinatra'
 require 'rollr'
 require 'json'
-require 'pry'
-
 
 get '/' do
   return "/roll/1/d/20, or just /roll."
