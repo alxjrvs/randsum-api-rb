@@ -8,30 +8,30 @@ end
 
 get '/roll' do
   content_type :json
-
-  result = Rollr::D20.roll
-  serialize result
+  serialize Rollr::D20.roll
 end
 
 get '/roll/:num/d/:sides' do
   content_type :json
-
-  if bad params
-    404
-  else
-    sides = params[:sides].to_i
-    num = params[:num].to_i
-
-    die = Rollr::Die.new(sides.to_i)
-    result = die.roll(number: num.to_i)
-    
-    serialize result
-  end
-
+  return 404 if bad params
+  serialize roll_result
 end
 
 error 404 do
   'Bad parameters'
+end
+
+def roll_result
+  die = Rollr::Die.new(sides_of_die)
+  die.roll(number_of_dice)
+end
+
+def sides_of_die
+  params[:sides].to_i
+end
+
+def number_of_dice
+  params[:num].to_i
 end
 
 def bad(params)
@@ -39,6 +39,7 @@ def bad(params)
   return true if params[:num].to_i == 0
   return false
 end
+
 def serialize(result)
   {
     total:          result.total,
