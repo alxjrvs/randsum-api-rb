@@ -1,5 +1,5 @@
 require 'sinatra'
-require 'rollr'
+require 'randsum'
 require 'json'
 
 get '/' do
@@ -8,7 +8,7 @@ end
 
 get '/roll' do
   content_type :json
-  serialize Rollr::D20.roll
+  serialize Randsum::D20.roll
 end
 
 get '/roll/:num/d/:sides' do
@@ -22,7 +22,7 @@ error 404 do
 end
 
 def roll_result
-  die = Rollr::Die.new(sides_of_die)
+  die = Randsum::Die.new(sides_of_die)
   die.roll(number_of_dice)
 end
 

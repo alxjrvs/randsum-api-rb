@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.3.0'
 
 gem 'sinatra'
-gem 'rollr'
+gem 'randsum'
 
 gem 'pry-remote', group: [:test, :development]
 
